@@ -47,24 +47,12 @@ class HomeScreen extends StatelessWidget {
                 ]),
               ),
               // Current Bets Section
-              Column(
-                children: [
-                 
-                  SmallCard(
-                    title: 'EIDI',
-                    amount: '+128',
-                    imageUrl: 'lib/assets/images/EIDI.png',
-                    date: '27.12.2024',
-                    whatColor: 0,
-                  ),
-                  SmallCard(
-                    title: 'GAD',
-                    amount: '+226',
-                    imageUrl: 'lib/assets/images/GAD.png',
-                    date: '01.01.2025',
-                    whatColor: 0,
-                  ),
-                ],
+              Container(
+                height:200,
+                child: ListView.builder(itemCount: 2,
+                  itemBuilder: (context, index){
+                  return getCur()[index];
+                },),
               ),
               Divider(),
               // Hot Section

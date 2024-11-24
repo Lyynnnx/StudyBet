@@ -39,7 +39,7 @@ class _LastScreenState extends State<LastScreen> {
     }
     else{
       mainScreen=ProfileScreen();
-      mainTitle=Text("Profile");
+      mainTitle=Text("Profile", style: TextStyle(color: Colors.white),);
     }
   }
 
@@ -49,7 +49,7 @@ class _LastScreenState extends State<LastScreen> {
   Widget build(BuildContext context) {
     if(counter==0){
       mainScreen=HomeScreen();
-      mainTitle=Text('Your current bets');
+      mainTitle=Text('Your current bets', style: TextStyle(color: Colors.white),);
     }
     else if(counter==1){
       mainScreen=ExplorePage();

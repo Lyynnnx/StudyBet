@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:studybet/screens/past_best.dart';
 
 
 class ProfileScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 10,),
               Center(
                 child: Column(
                   children: [
@@ -114,8 +116,16 @@ class ProfileScreen extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
-                    Icon(
-                      Icons.arrow_forward,
+                    IconButton(icon: 
+                      Icon(Icons.arrow_forward),
+                      onPressed: (){
+                        // Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        //   return PastBets();
+                        // }));
+                        showModalBottomSheet(context: context, builder: (context){
+                          return PastBets();
+                        });
+                      },
                       color: Colors.white,
                     ),
                   ],

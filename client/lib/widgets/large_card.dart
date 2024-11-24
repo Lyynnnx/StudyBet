@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:studybet/dummy_data/dummy_currents.dart';
 
-class LargeCard extends StatelessWidget {
+class LargeCard extends StatefulWidget {
   final String title;
   final String description;
   final String imgurl;
 
-  LargeCard({
-    Key? key,
-    required this.title,
-    required this.description,
-    required this.imgurl
-  }) : super(key: key);
+  LargeCard(
+      {Key? key,
+      required this.title,
+      required this.description,
+      required this.imgurl})
+      : super(key: key);
 
+  @override
+  State<LargeCard> createState() => _LargeCardState();
+}
+
+class _LargeCardState extends State<LargeCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -22,18 +28,33 @@ class LargeCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(imgurl, scale: 3,),
+            Image.asset(
+              widget.imgurl,
+              scale: 3,
+            ),
             SizedBox(height: 8),
             Text(
-              title,
+              widget.title,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 4),
-            Text(description, style: TextStyle(fontSize: 12)),
+            Text(widget.description, style: TextStyle(fontSize: 12)),
             SizedBox(height: 8),
             Row(
               children: [
-                ElevatedButton(onPressed: () {}, child: Text('Buy Yes')),
+                ElevatedButton(
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text('Bought a \'Yes\' for \'Will we win?\''),
+                      ));
+                      
+                      setState((){
+                            make_bet();
+                      });
+                      
+                      
+                    },
+                    child: Text('Buy Yes')),
                 SizedBox(width: 8),
                 ElevatedButton(onPressed: () {}, child: Text('Buy No')),
               ],

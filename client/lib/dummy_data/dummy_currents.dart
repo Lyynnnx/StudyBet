@@ -27,12 +27,13 @@ import 'package:studybet/widgets/SmallCard.dart';
   ];
 
   List<SmallCard> getCur(){
-     return cringe;
+     return cringe.reversed.toList();
   }
 
 void make_bet(){
+  print("wow");
   cringe.add(
-    SmallCard(
+    SmallCard( 
       title: 'Will we win?',
       amount: '+4',
       imageUrl: 'lib/assets/images/FPV.png',
@@ -40,6 +41,19 @@ void make_bet(){
       whatColor: 0,
     ),
   );
+  var temp=cringe[0];
+  int ind=0;
+  for(int i=0; i<cringe.length; i++){
+    if(cringe[i].title=="Will we win?"){
+        ind=0;
+        break;
+    }
+  }
+  var temp2=cringe.where((x)=>x.title=='Will we win?');
+  cringe[0]=cringe[ind];
+  cringe[ind]=temp;
+
+  
 }
   
   

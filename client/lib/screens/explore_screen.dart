@@ -61,6 +61,7 @@ class ExplorePage extends StatelessWidget {
                 ),
               ),
             ),
+            Divider(),
             Expanded(
               child: ListView.builder(
                 itemCount: 2, // Replace with your data length

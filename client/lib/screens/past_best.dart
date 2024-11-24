@@ -7,6 +7,7 @@ class PastBets extends StatelessWidget {
    @override
   Widget build(BuildContext context) {
     return Container(
+      color:Theme.of(context).secondaryHeaderColor,
       child: ListView.builder(itemCount: getPast().length,
         itemBuilder: (context, index){
           
