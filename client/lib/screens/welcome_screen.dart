@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:studybet/screens/last_screen.dart';
+import 'package:studybet/screens/main_screen.dart';
 import 'package:studybet/screens/wallet_connection.dart';
 import 'package:studybet/screens/wallet_test.dart';
 import 'package:studybet/utils/key_generator.dart';
@@ -23,13 +25,16 @@ class _WelcumState extends State<Welcum> {
   @override
    void initState() {
     super.initState();
+    if(publicKey==null){
     _initializeKeys();
+    }
+
   }
 
   Future<void> _initializeKeys() async {
-    final keys = await generateKeyPair(); // Генерация ключей
+    final keys = await generateDappEncryptionPublicKey(); // Генерация ключей
     setState(() {
-      publicKey = keys['publicKey'];
+      publicKey = keys;
     });
   }
 
@@ -46,14 +51,22 @@ class _WelcumState extends State<Welcum> {
       setState(() {
         walletAddress = wallet;
       });
+      
+      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+        return HomeScreen();
+      }));
+      print("mama");
 
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('Подключен кошелек: $wallet'),
       ));
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Ошибка подключения к кошельку'),
-      ));
+       Navigator.of(context).push(MaterialPageRoute(builder: (context){
+        return LastScreen();
+      }));
+      // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      //   content: Text('Ошибка подключения к кошельку'),
+      // ));
     }
   }
 

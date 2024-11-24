@@ -23,9 +23,9 @@ class _WalletTestState extends State<WalletTest> {
     _initializeKeys();
   }
   Future<void> _initializeKeys() async {
-    final keys = await generateKeyPair(); // Генерация ключей
+    final keys = await generateDappEncryptionPublicKey(); // Генерация ключей
     setState(() {
-      publicKey = keys['publicKey'];
+      publicKey = keys;
     });
   }
 

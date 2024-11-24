@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:studybet/dummy_data/dummy_currents.dart';
 class CurrentBets extends StatefulWidget {
@@ -10,6 +11,7 @@ class _CurrentBetsState extends State<CurrentBets> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color:  Theme.of(context).secondaryHeaderColor,
       child: ListView.builder(itemCount: getCur().length,
         itemBuilder: (context, index){
         return getCur()[index];

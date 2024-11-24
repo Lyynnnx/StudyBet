@@ -26,48 +26,51 @@ class ExplorePage extends StatelessWidget {
       //     BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
       //   ],
       // ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Search',
-                hintStyle: TextStyle(color: Colors.white, fontFamily: 'Inter'),
-                filled: true,
-                fillColor: Theme.of(context).primaryColor,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide.none,
+      body: Container(
+        color:Theme.of(context).secondaryHeaderColor,
+        child: Column(
+          children: [SizedBox(height: 10),
+            // Padding(
+            //   padding: const EdgeInsets.all(16.0),
+            //   child: TextField(
+            //     decoration: InputDecoration(
+            //       hintText: 'Search',
+            //       hintStyle: TextStyle(color: Colors.white, fontFamily: 'Inter'),
+            //       filled: true,
+            //       fillColor: Theme.of(context).primaryColor,
+            //       border: OutlineInputBorder(
+            //         borderRadius: BorderRadius.circular(8),
+            //         borderSide: BorderSide.none,
+            //       ),
+            //       prefixIcon: Icon(Icons.search, color: Colors.white),
+            //     ),
+            //   ),
+            // ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  children: [
+                    _buildCategoryChip(context, 'ERA'),
+                    _buildCategoryChip(context, 'GAD'),
+                    _buildCategoryChip(context, 'FPV'),
+                    _buildCategoryChip(context, 'It-Sec'),
+                    _buildCategoryChip(context, 'GBS'),
+                  ],
                 ),
-                prefixIcon: Icon(Icons.search, color: Colors.white),
               ),
             ),
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                children: [
-                  _buildCategoryChip(context, 'ERA'),
-                  _buildCategoryChip(context, 'GAD'),
-                  _buildCategoryChip(context, 'FPV'),
-                  _buildCategoryChip(context, 'It-Sec'),
-                  _buildCategoryChip(context, 'GBS'),
-                ],
+            Expanded(
+              child: ListView.builder(
+                itemCount: 2, // Replace with your data length
+                itemBuilder: (context, index) {
+                  return getBigCringe()[index];// Update with actual image path
+                },
               ),
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 2, // Replace with your data length
-              itemBuilder: (context, index) {
-                return getBigCringe()[index];// Update with actual image path
-              },
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

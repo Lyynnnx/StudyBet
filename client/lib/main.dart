@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:studybet/screens/current_bets.dart';
 import 'package:studybet/screens/explore_screen.dart';
 import 'package:studybet/screens/main_screen.dart';
@@ -8,6 +9,7 @@ import 'package:studybet/screens/wallet_test.dart';
 import 'package:studybet/screens/welcome_screen.dart';
 
 void main() {
+  
   runApp(const MyApp());
 }
 

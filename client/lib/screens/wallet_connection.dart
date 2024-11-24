@@ -25,8 +25,8 @@ class WalletConnection {
      // final uri2 = Uri.https("https://phantom.app/ul/v1/connect?dapp_encryption_public_key=<ваш_публичный_ключ>&redirect_uri=studybet.app://auth")
       //final uri2 = Uri.https("https://phantom.app/ul/v1/connect?dapp_encryption_public_key=${publicKey}y&redirect_uri=studybet.app://auth");
       //final uri2 = Uri.https("https://phantom.app/ul/v1/connect?dapp_encryption_public_key=<ваш_публичный_ключ>&redirect_uri=studybet.app://auth");
-      //String uri2 = "https://phantom.app/ul/v1/connect?dapp_encryption_public_key=$publicKey&redirect_uri=studybet.app://connect_callback";
-      String uri2 = "https://phantom.app/ul/v1/connect?dapp_encryption_public_key=CCrUCktERroE3X9GamMSzXTtW1sZkS2QfKKoSGjMCeSY&redirect_uri=studybet.app://connect_callback";
+      String uri2 = "https://phantom.app/ul/v1/connect?dapp_encryption_public_key=$publicKey&redirect_uri=studybet.app://connect_callback";
+     // String uri2 = "https://phantom.app/ul/v1/connect?dapp_encryption_public_key=HdKfwHzwckjbCDKeKFVQ4iit7zqB1xtu2zWZof8c4vNE&redirect_uri=studybet.app://connect_callback";
       //FkFFdisdaEHZnA6KJU6JN7skqr7WZhbHmevoLTh4g52E
       print("Сформированный URI: $uri2");
 
