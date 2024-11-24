@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:studybet/screens/current_bets.dart';
 import 'package:studybet/screens/explore_screen.dart';
@@ -9,8 +10,11 @@ import 'package:studybet/screens/wallet_test.dart';
 import 'package:studybet/screens/welcome_screen.dart';
 
 void main() {
-  
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((fn){
+
   runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -20,6 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         

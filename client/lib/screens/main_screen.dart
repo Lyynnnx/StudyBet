@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
             .colorScheme
             .primary, // Set purple background color
         child: SingleChildScrollView(
+          
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -65,24 +66,17 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              ListView(
-                shrinkWrap:
-                    true, // Ensures the ListView fits inside the scrollable content
-                physics:
-                    NeverScrollableScrollPhysics(), // Disable separate scrolling for the ListView
-                children: [
-                  LargeCard(
-                    title: "popa",
-                    description: "amogusamogusamogusamogusamogus",
-                    imgurl: "lib/assets/images/FPV.png",
-                  ),
-                  LargeCard(
-                    title: "bebra",
-                    description: "amogusamogusamogusamogusamogus",
-                    imgurl: "lib/assets/images/FPV.png",
-                  ),
-                ],
-              ),
+              LargeCard(
+    title: 'Will we win?',
+    description: 'Is our team going to win HackaTUM?',
+    imgurl: 'lib/assets/images/ponti.png',
+  ),
+  LargeCard(
+    title: 'Analysis impossible?',
+    description: '+128',
+    imgurl: 'lib/assets/images/analysis.jfif',
+  )
+              
             ],
           ),
         ),

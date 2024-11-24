@@ -36,7 +36,7 @@ void make_bet(){
     SmallCard( 
       title: 'Will we win?',
       amount: '+4',
-      imageUrl: 'lib/assets/images/FPV.png',
+      imageUrl: 'lib/assets/images/ponti.png',
       date: '24.12.2024',
       whatColor: 0,
     ),

@@ -10,9 +10,9 @@ List<LargeCard> cringe = [
     imgurl: 'lib/assets/images/ponti.png',
   ),
   LargeCard(
-    title: 'EIDI',
+    title: 'Analysis impossible?',
     description: '+128',
-    imgurl: 'lib/assets/images/EIDI.png',
+    imgurl: 'lib/assets/images/analysis.jfif',
   )
 
 ];
