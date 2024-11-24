@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:studybet/screens/past_best.dart';
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,18 +13,18 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Center(
               child: Column(
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                       radius: 40,
                       backgroundColor: Colors.white,
                       backgroundImage:
                           AssetImage('lib/assets/images/sasha.jpg')),
-                  SizedBox(height: 10),
+                 const SizedBox(height: 10),
                   Text(
                     'Change profile picture',
                     style: TextStyle(
@@ -33,10 +35,10 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
-            Divider(color: Colors.white54, thickness: 1),
-            SizedBox(height: 20),
-            Row(
+            const SizedBox(height: 20),
+            const Divider(color: Colors.white54, thickness: 1),
+           const  SizedBox(height: 20),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -56,8 +58,8 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 15),
-            Row(
+            const SizedBox(height: 15),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -77,8 +79,8 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 15),
-            Row(
+            const SizedBox(height: 15),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -98,7 +100,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             GestureDetector(
               onTap: () {
                 // Добавьте логику для перехода на экран истории ставок
@@ -106,7 +108,7 @@ class ProfileScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Past bets',
                     style: TextStyle(
                       color: Colors.white,
@@ -114,7 +116,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    icon: Icon(Icons.arrow_forward),
+                    icon: const Icon(Icons.arrow_forward),
                     onPressed: () {
                       // Navigator.of(context).push(MaterialPageRoute(builder: (context){
                       //   return PastBets();
@@ -122,7 +124,7 @@ class ProfileScreen extends StatelessWidget {
                       showModalBottomSheet(
                           context: context,
                           builder: (context) {
-                            return PastBets();
+                            return const PastBets();
                           });
                     },
                     color: Colors.white,

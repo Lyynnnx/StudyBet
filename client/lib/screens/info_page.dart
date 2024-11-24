@@ -15,10 +15,10 @@ class InfoWidget extends StatelessWidget {
     backgroundColor: Theme.of(context).primaryColor,
     body:Center(child: Column(children: [
       SizedBox(height:100),
-      Image.asset(imgUrl, scale: 4,),
+      Image.asset(imgUrl, scale: 6,),
       Text(description),
 
-      Container(height:250,
+      SizedBox(height:250,
         child: ListView.builder(itemCount: 3,
           itemBuilder: (context, index){
           return getUsers()[index];

@@ -24,7 +24,7 @@ Future<String> generateDappEncryptionPublicKey() async {
   // Публичный ключ в формате base64
   final publicKeyBase64 = base64Encode(publicKey.bytes);
   final bebra = publicKeyBase64.toString().substring(0, publicKeyBase64.length-1);
-  print("Ваш DApp Encryption Public Key: $bebra $publicKeyBase64");
+//  print("Ваш DApp Encryption Public Key: $bebra $publicKeyBase64");
 
   return bebra;
 }

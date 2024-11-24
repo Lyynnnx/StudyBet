@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:studybet/dummy_data/big_search_dummy.dart';
-import 'package:studybet/widgets/large_card.dart';
 
 
 
 class ExplorePage extends StatelessWidget {
+  const ExplorePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class ExplorePage extends StatelessWidget {
       body: Container(
         color:Theme.of(context).secondaryHeaderColor,
         child: Column(
-          children: [SizedBox(height: 10),
+          children: [const SizedBox(height: 10),
             // Padding(
             //   padding: const EdgeInsets.all(16.0),
             //   child: TextField(
@@ -61,7 +62,7 @@ class ExplorePage extends StatelessWidget {
                 ),
               ),
             ),
-            Divider(),
+            const Divider(),
             Expanded(
               child: ListView.builder(
                 itemCount: 2, // Replace with your data length
@@ -80,7 +81,7 @@ class ExplorePage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
       child: Chip(
-        label: Text(label, style: TextStyle(color: Colors.white)),
+        label: Text(label, style: const TextStyle(color: Colors.white)),
         backgroundColor: Theme.of(context).primaryColor,
       ),
     );

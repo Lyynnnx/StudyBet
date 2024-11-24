@@ -8,7 +8,7 @@ class SmallCard extends StatelessWidget {
   final String imageUrl;
   final int whatColor;
 
-  SmallCard({Key? key, required this.amount, required this.title, required this.date, required this.imageUrl,required  this.whatColor}) : super(key: key);
+  const SmallCard({super.key, required this.amount, required this.title, required this.date, required this.imageUrl,required  this.whatColor});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class SmallCard extends StatelessWidget {
       child: Card(
         
         color: Theme.of(context).primaryColor,
-        margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
@@ -35,7 +35,7 @@ class SmallCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     const SizedBox( height: 4),
                     Text(
@@ -45,7 +45,7 @@ class SmallCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
                 amount,
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: whatColor==0?Colors.white:whatColor==1?Colors.green:Colors.red),

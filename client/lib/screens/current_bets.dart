@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:studybet/dummy_data/dummy_currents.dart';
 
 class CurrentBets extends StatefulWidget {
@@ -15,8 +15,8 @@ class _CurrentBetsState extends State<CurrentBets> {
         color: Theme.of(context).secondaryHeaderColor,
         child: Column(
           children: [
-            Text("Current bets:",
-                style: TextStyle(
+            const Text("Current bets:",
+                style:  TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 15

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_auth/flutter_web_auth.dart';
 
-import 'dart:convert';
+
 
 
 class WalletConnection {
@@ -15,7 +15,7 @@ class WalletConnection {
 
   // Функция для подключения к Phantom Wallet
   Future<String?> connectToPhantom(BuildContext context, String publicKey) async {
-    print(publicKey);
+   // print(publicKey);
     try {
       final dappEncryptionPublicKey = publicKey; // Сгенерируйте и добавьте сюда ваш публичный ключ
       // final uri = Uri.https("phantom.app", "/ul/v1/connect", {
@@ -28,7 +28,7 @@ class WalletConnection {
       String uri2 = "https://phantom.app/ul/v1/connect?dapp_encryption_public_key=$publicKey&redirect_uri=studybet.app://connect_callback";
      // String uri2 = "https://phantom.app/ul/v1/connect?dapp_encryption_public_key=HdKfwHzwckjbCDKeKFVQ4iit7zqB1xtu2zWZof8c4vNE&redirect_uri=studybet.app://connect_callback";
       //FkFFdisdaEHZnA6KJU6JN7skqr7WZhbHmevoLTh4g52E
-      print("Сформированный URI: $uri2");
+     // print("Сформированный URI: $uri2");
 
      
 
@@ -39,7 +39,7 @@ class WalletConnection {
          url: uri2,
         callbackUrlScheme: redirectUriScheme,
       );
-      print("Результат аутентификации: $result");
+      //print("Результат аутентификации: $result");
 
       // Получаем адрес кошелька из URL
      final uri1 = Uri.parse(result);
@@ -50,11 +50,11 @@ class WalletConnection {
     return wallet;
   } else {
   // Если параметр отсутствует, возвращаем null
-    print("Ошибка: параметр public_key отсутствует в URL");
+    //print("Ошибка: параметр public_key отсутствует в URL");
   return null;
 }
     } catch (e) {
-      print("Ошибка подключения к Phantom Wallet: $e");
+     // print("Ошибка подключения к Phantom Wallet: $e");
       return null;
     }
   }

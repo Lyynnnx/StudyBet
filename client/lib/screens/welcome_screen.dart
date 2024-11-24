@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:studybet/screens/last_screen.dart';
 import 'package:studybet/screens/main_screen.dart';
 import 'package:studybet/screens/wallet_connection.dart';
-import 'package:studybet/screens/wallet_test.dart';
 import 'package:studybet/utils/key_generator.dart';
 
 class Welcum extends StatefulWidget {
-  Welcum({super.key});
+ const  Welcum({super.key});
 
   @override
   State<Welcum> createState() => _WelcumState();
@@ -53,16 +52,16 @@ class _WelcumState extends State<Welcum> {
       });
       
       Navigator.of(context).push(MaterialPageRoute(builder: (context){
-        return HomeScreen();
+        return const HomeScreen();
       }));
-      print("mama");
+     // print("mama");
 
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('Подключен кошелек: $wallet'),
       ));
     } else {
        Navigator.of(context).push(MaterialPageRoute(builder: (context){
-        return LastScreen();
+        return const LastScreen();
       }));
       // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       //   content: Text('Ошибка подключения к кошельку'),
@@ -96,8 +95,8 @@ class _WelcumState extends State<Welcum> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("StudyBet", style: TextStyle(color: Colors.white, fontSize: 50),),
-                SizedBox(height: 200),
+                const Text("StudyBet", style: TextStyle(color: Colors.white, fontSize: 50),),
+                const SizedBox(height: 200),
                 ElevatedButton(
                   onPressed: () {
                     connectToWallet();

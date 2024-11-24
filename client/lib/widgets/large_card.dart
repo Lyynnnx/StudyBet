@@ -7,7 +7,7 @@ class LargeCard extends StatefulWidget {
   final String description;
   final String imgurl;
 
-  LargeCard(
+  const LargeCard(
       {Key? key,
       required this.title,
       required this.description,
@@ -29,7 +29,7 @@ class _LargeCardState extends State<LargeCard> {
       },
       child: Card(
         color: Theme.of(context).primaryColor,
-        margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -39,14 +39,14 @@ class _LargeCardState extends State<LargeCard> {
                 widget.imgurl,
                 scale: 3,
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 widget.title,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 4),
-              Text(widget.description, style: TextStyle(fontSize: 12)),
-              SizedBox(height: 8),
+              const SizedBox(height: 4),
+              Text(widget.description, style: const TextStyle(fontSize: 12)),
+              const SizedBox(height: 8),
               Row(
                 children: [
                   ElevatedButton(
@@ -61,9 +61,9 @@ class _LargeCardState extends State<LargeCard> {
                         
                         
                       },
-                      child: Text('Buy Yes')),
-                  SizedBox(width: 8),
-                  ElevatedButton(onPressed: () {}, child: Text('Buy No')),
+                      child: const Text('Buy Yes')),
+                  const SizedBox(width: 8),
+                  ElevatedButton(onPressed: () {}, child: const Text('Buy No')),
                 ],
               ),
             ],

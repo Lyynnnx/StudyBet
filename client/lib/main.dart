@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get_it/get_it.dart';
-import 'package:studybet/screens/current_bets.dart';
-import 'package:studybet/screens/explore_screen.dart';
-import 'package:studybet/screens/main_screen.dart';
-import 'package:studybet/screens/past_best.dart';
-import 'package:studybet/screens/profile_screen.dart';
-import 'package:studybet/screens/wallet_test.dart';
 import 'package:studybet/screens/welcome_screen.dart';
 
 void main() {
@@ -29,9 +22,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 70, 43, 92),
+          seedColor: const Color.fromARGB(255, 70, 43, 92),
         onError: Colors.red,
-        onPrimary: Color.fromARGB(255, 70, 43, 92)
+        onPrimary: const Color.fromARGB(255, 70, 43, 92)
         ),
         primaryColor:const Color.fromARGB(255, 114, 71, 149) ,
         secondaryHeaderColor: const Color.fromARGB(255, 70, 43, 92),
@@ -43,13 +36,13 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home:Welcum(),
+      home:const Welcum(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-   MyHomePage({super.key, required this.title });
+   const MyHomePage({super.key, required this.title });
   final String title;
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -63,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center()
+      body: const Center()
      
     // This trailing comma makes auto-formatting nicer for build methods.
     );

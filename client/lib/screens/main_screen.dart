@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:studybet/dummy_data/dummy_currents.dart';
 import 'package:studybet/screens/current_bets.dart';
-import 'package:studybet/widgets/SmallCard.dart';
 import 'package:studybet/widgets/large_card.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class HomeScreen extends StatelessWidget {
             .colorScheme
             .primary, // Set purple background color
         child: SingleChildScrollView(
-          
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -41,21 +40,21 @@ class HomeScreen extends StatelessWidget {
                       showModalBottomSheet(
                           context: context,
                           builder: (context) {
-                            return CurrentBets();
+                            return const CurrentBets();
                           });
                     },
                   )
                 ]),
               ),
               // Current Bets Section
-              Container(
+              SizedBox(
                 height:200,
                 child: ListView.builder(itemCount: 2,
                   itemBuilder: (context, index){
                   return getCur()[index];
                 },),
               ),
-              Divider(),
+            const  Divider(),
               // Hot Section
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -66,12 +65,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              LargeCard(
+              const LargeCard(
     title: 'Will we win?',
     description: 'Is our team going to win HackaTUM?',
     imgurl: 'lib/assets/images/ponti.png',
   ),
-  LargeCard(
+  const LargeCard(
     title: 'Analysis impossible?',
     description: '+128',
     imgurl: 'lib/assets/images/analysis.jfif',

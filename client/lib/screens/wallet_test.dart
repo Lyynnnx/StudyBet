@@ -43,6 +43,7 @@ class _WalletTestState extends State<WalletTest> {
         walletAddress = wallet;
       });
 
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('Подключен кошелек: $wallet'),
       ));
@@ -73,7 +74,7 @@ class _WalletTestState extends State<WalletTest> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      appBar: AppBar(title: Text("mama")),
+      appBar: AppBar(title: const Text("mama")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
