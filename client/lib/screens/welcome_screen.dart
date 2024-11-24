@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:studybet/screens/last_screen.dart';
+import 'package:studybet/screens/main_screen.dart';
 import 'package:studybet/screens/wallet_connection.dart';
 import 'package:studybet/utils/key_generator.dart';
 
-class WalletTest extends StatefulWidget {
-  const WalletTest({super.key});
+class Welcum extends StatefulWidget {
+ const  Welcum({super.key});
 
   @override
-  State<WalletTest> createState() => _WalletTestState();
+  State<Welcum> createState() => _WelcumState();
 }
 
-class _WalletTestState extends State<WalletTest> {
+class _WelcumState extends State<Welcum> {
   String? publicKey;
+
  String? walletAddress;
+
   String? transactionSignature;
 
   // Создаем экземпляр класса WalletConnection
@@ -20,8 +24,12 @@ class _WalletTestState extends State<WalletTest> {
   @override
    void initState() {
     super.initState();
+    if(publicKey==null){
     _initializeKeys();
+    }
+
   }
+
   Future<void> _initializeKeys() async {
     final keys = await generateDappEncryptionPublicKey(); // Генерация ключей
     setState(() {
@@ -42,15 +50,22 @@ class _WalletTestState extends State<WalletTest> {
       setState(() {
         walletAddress = wallet;
       });
+      
+      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+        return const HomeScreen();
+      }));
+     // print("mama");
 
-      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('Подключен кошелек: $wallet'),
       ));
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Ошибка подключения к кошельку'),
-      ));
+       Navigator.of(context).push(MaterialPageRoute(builder: (context){
+        return const LastScreen();
+      }));
+      // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      //   content: Text('Ошибка подключения к кошельку'),
+      // ));
     }
   }
 
@@ -72,34 +87,31 @@ class _WalletTestState extends State<WalletTest> {
 
   @override
   Widget build(BuildContext context) {
-    
+
     return Scaffold(
-      appBar: AppBar(title: const Text("mama")),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            walletAddress == null
-                ? const Text('Кошелёк не подключён')
-                : Text('Кошелёк: $walletAddress'),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: connectToWallet,
-              child: const Text('Подключить кошелёк'),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: sendTransaction,
-              child: const Text('Отправить транзакцию'),
-            ),
-            const SizedBox(height: 20),
-            transactionSignature == null
-                ? const Text('Транзакция не отправлена')
-                : Text('Signature: $transactionSignature'),
-          ],
-        ),
-      ),
+      body: 
+         Container(width:double.infinity,
+            color: Theme.of(context).colorScheme.onPrimary,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text("StudyBet", style: TextStyle(color: Colors.white, fontSize: 50),),
+                const SizedBox(height: 200),
+                ElevatedButton(
+                  onPressed: () {
+                    connectToWallet();
+                  },
+                  child: Text(
+                    "Sign In With Google",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                ),
+              ],
+            )),
+      
     );
   }
 }
